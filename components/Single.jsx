@@ -37,7 +37,10 @@ function Single(props) {
 			<div className="w-5/12"><Image src={image} width={400} height={400} alt={title} /></div>
 			<div className="w-7/12">
 				<h3 className="text-gray-700 text-4xl mb-4">{title}</h3>
-				<h4 className="text-gray-700 text-4xl mb-3"><b>$</b>{price}</h4>
+				<div className="flex items-center gap-10 py-4">
+					<h4 className="text-gray-700 text-4xl"><b>$</b>{price}</h4>
+					<h4 className="text-2xl text-gray-600"><i className="fas fa-star text-red-500 inline-block mr-1"></i> {rating.rate}</h4>
+				</div>
 				<p className="text-gray-600 text-xl">{description}</p>
 				{
 					inCart ?
