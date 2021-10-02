@@ -25,14 +25,15 @@ export default function Product(props) {
 	}
 
 	return(
-		<div className="p-4 shadow-md rounded-md" style={{background: "#fff"}}>
+		<div className="p-4 shadow-md rounded-md flex flex-col" style={{background: "#fff"}}>
 			<div className="text-center"><Image src={image} alt={title} width={170} height={150} /></div>
-			<div className="py-5">
+			<div className="py-5 flex flex-col flex-grow">
 				<h3>{title}</h3>
 				<div className="flex justify-between items-center">
 					<h4 className="text-lg text-gray-600 mt-4 mb-2 inline-block mr-auto"><i className="fas fa-star text-red-500 inline-block mr-1"></i> {rating.rate}</h4>
 					<h5 className="text-2xl inline-block ml-auto"><b>$</b>{price}</h5>
 				</div>
+				<div className="flex flex-col justify-end flex-grow">
 					<Link href={`/products/${id}`}>
 						<a className="mt-4 text-xl text-center text-blue-700 bg-blue-300 block w-full py-3 rounded-md hover:bg-blue-400">View Product</a>
 					</Link>
@@ -46,6 +47,7 @@ export default function Product(props) {
 							Add To Cart
 						</button>
 					}
+				</div>
 			</div>
 		</div>
 	)
